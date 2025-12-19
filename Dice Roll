@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int userDice, compDice;
+
+    srand(time(0));
+
+    printf("🎲 Dice Game 🎲\n");
+    printf("Press 1 to roll the dice: ");
+    scanf("%d", &userDice);
+
+    userDice = rand() % 6 + 1;
+    compDice = rand() % 6 + 1;
+
+    printf("Your Dice: %d\n", userDice);
+    printf("Computer Dice: %d\n", compDice);
+
+    if (userDice > compDice) {
+        printf("🎉 You Win!\n");
+    }
+    else if (userDice < compDice) {
+        printf("😢 Computer Wins!\n");
+    }
+    else {
+        printf("🤝 It's a Draw!\n");
+    }
+
+    return 0;
+}
